@@ -36,3 +36,76 @@
     transform: rotate(360deg);
   }
 }
+/* Style for the vertical navbar */
+.vertical-navbar {
+  width: 250px; /* Adjust the width as needed */
+  background-color: rgb(248, 249, 250); /* Background color for the navbar */
+}
+
+/* Style for the list items */
+.navbar-nav.flex-column .nav-item {
+  text-align: start; /* Center-align text in the vertical navbar */
+  padding-left: 20px;
+}
+/* Style for the links */
+.navbar-nav.flex-column .nav-link {
+  color: rgba(0, 0, 0, 0.6);
+}
+/* Style for the links */
+.navbar-nav.flex-column .nav-link.active,
+.navbar-nav.flex-column .nav-link.show {
+  color: rgba(0, 0, 0, 1); /* Text color for the links */
+}
+
+/* Hover effect for links */
+.navbar-nav.flex-column .nav-link:hover {
+  background-color: rgb(248, 249, 250); /* Background color on hover */
+}
+
+footer {
+  background-color: #777;
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+footer a {
+  color: white;
+}
+@media (max-width: 600px) {
+  section {
+    -webkit-flex-direction: column;
+    flex-direction: column;
+  }
+}
+.category-product-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.category-products-butons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.category-products-delivery-stock {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+.features-list {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+.remaining-stock {
+  padding-left: 10px;
+}
+hr {
+  margin: 10px;
+  width: 90%;
+}
+.product-section {
+  padding-left: 20px;
+}
