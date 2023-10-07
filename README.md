@@ -1,3 +1,5 @@
+# Visit the Master branch to get code
+
 # React E-Commerce Store with Laravel Backend
 
 Welcome to the React E-Commerce Store repository! In this project, we've combined the power of React.js and Laravel to create a robust e-commerce store.
