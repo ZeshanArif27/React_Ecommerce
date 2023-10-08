@@ -12,12 +12,12 @@ const CategoryProducts = ({
   const feature = features;
   const featureArray = feature.split("\n");
   return (
-    <article>
-      <div className="card mb-3" style={{ maxWidth: "960px" }}>
-        <div className="row g-0">
-          <div className="col-md-4">
+    <article className="product-card">
+      <div className="card mb-3" style={{ maxWidth: "auto" }}>
+        <div className="row g-0" style={{ alignContent: "center" }}>
+          <div className="product-img col-md-4">
             <img
-              src={`./assets/${image}`}
+              src={`data:image/png;base64,${image}`}
               className="img-fluid rounded-start"
               alt={title}
             />
@@ -47,7 +47,6 @@ const CategoryProducts = ({
                 })}
               </small>
             </div>
-            <br />
             <div className="category-products-butons">
               <button className="btn btn-primary">Veiw Product</button>
               <button className="btn btn-primary">Add to Cart</button>
