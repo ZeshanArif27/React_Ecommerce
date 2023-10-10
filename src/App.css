@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,7 +35,8 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
+
 /* Style for the vertical navbar */
 .vertical-navbar {
   width: 250px; /* Adjust the width as needed */
@@ -47,10 +48,12 @@
   text-align: start; /* Center-align text in the vertical navbar */
   padding-left: 20px;
 }
+
 /* Style for the links */
 .navbar-nav.flex-column .nav-link {
   color: rgba(0, 0, 0, 0.6);
 }
+
 /* Style for the links */
 .navbar-nav.flex-column .nav-link.active,
 .navbar-nav.flex-column .nav-link.show {
@@ -62,6 +65,7 @@
   background-color: rgb(248, 249, 250); /* Background color on hover */
 }
 
+/* Style for Footer */
 footer {
   background-color: #777;
   padding: 10px;
@@ -69,44 +73,56 @@ footer {
   color: white;
 }
 
+/* Footer Anchor */
 footer a {
   color: white;
 }
-@media (max-width: 600px) {
+
+/* @media (max-width: 600px) {
   section {
     -webkit-flex-direction: column;
     flex-direction: column;
   }
-}
+} */
+
+/* Price Section Styling */
 .category-product-price {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* Product Button Styling */
 .category-products-butons {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
   padding: 20px;
 }
+
+/* Delivery and Stock Section Styling */
 .category-products-delivery-stock {
   display: flex;
   justify-content: flex-start;
   align-items: baseline;
 }
+.remaining-stock {
+  padding-left: 10px;
+}
+
+/* Features List */
 .features-list {
   list-style: none;
   padding: 0px;
   margin: 0px;
 }
-.remaining-stock {
-  padding-left: 10px;
-}
+
 hr {
   margin: 10px;
   width: 90%;
 }
+
+/* Producs Styling */
 .product-section {
   padding-left: 20px;
 }

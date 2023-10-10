@@ -1,6 +1,9 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 const CategoryProducts = ({
+  id,
+  cat_id,
   title,
   image,
   dimensions,
@@ -9,8 +12,8 @@ const CategoryProducts = ({
   price,
   stock,
 }) => {
-  const feature = features;
-  const featureArray = feature.split("\n");
+  const navigate = useNavigate();
+  const feature = features.split("\n");
   return (
     <article className="product-card">
       <div className="card mb-3" style={{ maxWidth: "auto" }}>
@@ -24,7 +27,9 @@ const CategoryProducts = ({
           </div>
           <div className="col-md-4">
             <div className="card-body">
-              <h4 className="card-title">{title}</h4>
+              <h4 className="card-title">
+                <Link to={`products/${id}`}>{title}</Link>
+              </h4>
               <br />
               <div>
                 <h6 className="card-title">Dimensions</h6>
@@ -38,9 +43,9 @@ const CategoryProducts = ({
               )}
               <h6 className="card-title">Features</h6>
               <small className="text-body-secondary">
-                {featureArray.map((f, index) => {
+                {feature?.map((f, i) => {
                   return (
-                    <li className="features-list" key={index}>
+                    <li className="features-list" key={`feature${i}`}>
                       {f}
                     </li>
                   );
@@ -48,7 +53,12 @@ const CategoryProducts = ({
               </small>
             </div>
             <div className="category-products-butons">
-              <button className="btn btn-primary">Veiw Product</button>
+              <button
+                className="btn btn-primary"
+                onClick={() => navigate(`products/${id}`)}
+              >
+                Veiw Product
+              </button>
               <button className="btn btn-primary">Add to Cart</button>
             </div>
           </div>
