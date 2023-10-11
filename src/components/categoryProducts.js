@@ -1,5 +1,37 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import styled from "styled-components";
+
+const ProductCard = styled.article`
+  display: flex;
+  justify-content: center;
+  margin: 15px 15px 0 15px;
+`;
+
+const FeaturesList = styled.li`
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+`;
+const CategoryProductsbuttons = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+`;
+const CategoryProductsprice = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+const CatProdpriceDeliveryStock = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+`;
+const RemainingStock = styled.h6`
+  padding-left: 10px;
+`;
 
 const CategoryProducts = ({
   id,
@@ -15,10 +47,10 @@ const CategoryProducts = ({
   const navigate = useNavigate();
   const feature = features.split("\n");
   return (
-    <article className="product-card">
+    <ProductCard>
       <div className="card mb-3" style={{ maxWidth: "auto" }}>
         <div className="row g-0" style={{ alignContent: "center" }}>
-          <div className="product-img col-md-4">
+          <div className="product-img col-lg-4">
             <img
               src={`data:image/png;base64,${image}`}
               className="img-fluid rounded-start"
@@ -44,15 +76,11 @@ const CategoryProducts = ({
               <h6 className="card-title">Features</h6>
               <small className="text-body-secondary">
                 {feature?.map((f, i) => {
-                  return (
-                    <li className="features-list" key={`feature${i}`}>
-                      {f}
-                    </li>
-                  );
+                  return <FeaturesList key={`feature${i}`}>{f}</FeaturesList>;
                 })}
               </small>
             </div>
-            <div className="category-products-butons">
+            <CategoryProductsbuttons>
               <button
                 className="btn btn-primary"
                 onClick={() => navigate(`products/${id}`)}
@@ -60,23 +88,23 @@ const CategoryProducts = ({
                 Veiw Product
               </button>
               <button className="btn btn-primary">Add to Cart</button>
-            </div>
+            </CategoryProductsbuttons>
           </div>
           <div className="col-lg-4">
             <div className="card-body">
-              <div className="category-product-price">
+              <CategoryProductsprice>
                 <h6>Buy Now</h6>
                 <h4>&pound;{price}</h4>
-              </div>
+              </CategoryProductsprice>
 
               <hr />
 
               <div className="category-products-delivery">
                 <h5 className="card-title">Delivery</h5>
-                <div className="category-products-delivery-stock">
+                <CatProdpriceDeliveryStock>
                   <label>Remaining Stock: </label>
-                  <h6 className="remaining-stock"> {stock}</h6>
-                </div>
+                  <RemainingStock> {stock}</RemainingStock>
+                </CatProdpriceDeliveryStock>
                 <label>Free Delivery</label>
                 <br />
                 <label>Standard Delivery</label>
@@ -102,7 +130,7 @@ const CategoryProducts = ({
           </div>
         </div>
       </div>
-    </article>
+    </ProductCard>
   );
 };
 
